@@ -1,0 +1,8 @@
+package com.practice.practice_spring_boot;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class HelloWorldConfiguration {
+	
+}

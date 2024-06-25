@@ -1,0 +1,22 @@
+package com.practice.practice_spring_boot;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.practice.practice_spring_boot.game.MarioGame;
+
+@SpringBootApplication
+public class PracticeSpringBootApplication {
+
+	public static void main(String[] args) {
+//		SpringApplication.run(PracticeSpringBootApplication.class, args);
+		var game = new GameRunner();
+		
+		System.out.println("Game Running: "+ game);
+		game.up();
+		game.down();
+		game.left();
+		game.right();
+	}
+
+}

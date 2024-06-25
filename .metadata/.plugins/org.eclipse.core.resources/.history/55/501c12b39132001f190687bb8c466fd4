@@ -1,0 +1,10 @@
+package com.practice.practice_spring_boot;
+
+public class App03GamingSpring {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

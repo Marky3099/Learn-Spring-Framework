@@ -1,0 +1,13 @@
+package com.practice.practice_spring_boot;
+
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class GamingConfiguration {
+	
+	@Bean
+	public GamingConsole game() {
+		var game = new PacmanGame();
+		return game;
+	}
+}

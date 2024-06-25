@@ -1,0 +1,17 @@
+package com.practice.practice_spring_boot.game;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class HelloWorldConfiguration {
+	@Bean
+	public String name() {
+		return "Marky";
+	}
+	@Bean
+	public String age() {
+		return "Marky";
+	}
+	
+}
