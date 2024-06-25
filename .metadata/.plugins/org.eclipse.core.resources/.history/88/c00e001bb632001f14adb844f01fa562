@@ -1,0 +1,10 @@
+package com.practice.practice_spring_boot.examples.a2;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class MySQLDataService {
+	public int[] retrieveData() {
+		return new int[] { 11, 22, 33, 44, 55 };
+	}
+}
