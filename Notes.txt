@@ -11,21 +11,38 @@ Spring Container - Handle the beans and wire them.
 @Qualifier has higher priorty than @Primary
 @Component - allows Spring to detect custom beans
 	- an instance of class will be managed by Spring framework
+	Specializations of @Component:
+		-@Service - indicates that an annotated class has business logic
+		-@Controller - indicates that an annotated class is a "Controller"
+		-@Repository - indicates that an annotated class is used to retrieve and/or manipulate data in a database
 @ComponentScan - detect custom beans on a certain package 
 	ex: @ComponentScan("custom-package") 
 		if no params @ComponentScan will detect the current package
 Dependency Injection - identify beans, their dependencies and wire them together
 Dependency Injection Types
 Constructor-based - Dependencies are set by creating the Bean using its Constructor
+/Constructor injection
 Setter-based - Dependencies are set by calling setter methods on your beans
+/Setter injection
 Field - No setter or constructor. Dependency is injected using reflection.
-
+/Field injection
 IoC Container - Manages the lifecycle of beans and dependencies
 	Types: ApplicationContext (complex), BeanFactory (simpler geatures - rarely used)
-
+Bean Factory - Basic Spring IOC Container
+Application Context - Advanced Spring IOC Container with enterprise-specific features
 Spring Beans Scopes
 	Singleton - One object instance per Spring IoC Container
 		Java Singleton (GOF) vs Spring Singleton
 			Spring Singleton - One object instance per Spring IoC container
 			Java Singleton (GOF) - One object instance per JVM
 	Prototype - Possibly many object instances per Spring IoC container
+
+@PostConstruct - is used on a method that needs to be executed after dependency injection is done to performany initialization
+@PreDestroy - is used on a method as acallback notification to signal that the instance is in theprocess of being removed by the container
+
+CDI (Jakarta Contexts and Dependency Injection) - is a specification(interface)
+	@Inject - same as @Autowired in Spring
+	@Named - same as @Component in Spring
+
+@Configuration - indicates that a class declares one or more @Bean methods and may be processed by the Spring container to generate bean definitions
+@Scope(value = ConfigurationBeanFactory.SCOPE_PROTOTYPE) - Defines a bean to be a prototype
