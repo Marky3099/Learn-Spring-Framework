@@ -46,3 +46,8 @@ CDI (Jakarta Contexts and Dependency Injection) - is a specification(interface)
 
 @Configuration - indicates that a class declares one or more @Bean methods and may be processed by the Spring container to generate bean definitions
 @Scope(value = ConfigurationBeanFactory.SCOPE_PROTOTYPE) - Defines a bean to be a prototype
+
+HIBERNATE VS JPA
+
+	JPA - Defines the specification. It is an API. (For mapping ex. entities, attributes)
+	Hibernate - is one of the popular implementations of JPA

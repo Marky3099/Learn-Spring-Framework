@@ -1,5 +1,0 @@
-package com.practice.practice_spring_boot.examples.a2;
-
-public class MySQLDataService {
-
-}
