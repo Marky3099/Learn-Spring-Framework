@@ -3,6 +3,8 @@ package com.springboot.myfirstwebapp.todo;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 
-@Controller
+//@Controller
 public class TodoController {
 	
 	private ToDoService todoService;
@@ -29,14 +31,16 @@ public class TodoController {
 
 	@RequestMapping("todo")
 	public String index(ModelMap model) {
-		List<ToDo> todos = todoService.findByUserName("marky");
+		String username = getLoggedInUsername(model);
+		List<ToDo> todos = todoService.findByUserName(username);
 		model.put("todos", todos);
 		return "allTodo";
 	}
+
 	
 	@RequestMapping(value="add-todo", method = RequestMethod.GET)
 	public String todoForm(ModelMap model) {
-		String username = (String)model.get("name");
+		String username = getLoggedInUsername(model);
 		ToDo todo = new ToDo(0,username,"",LocalDate.now().plusYears(1),false);
 		model.put("todo", todo);
 		return "addTodo";
@@ -48,8 +52,8 @@ public class TodoController {
 			return "addTodo";
 		}
 		
-		String username = (String)model.get("name");
-		todoService.addToDo(username,todo.getDescription(),LocalDate.now().plusYears(1), false);
+		String username = getLoggedInUsername(model);
+		todoService.addToDo(username,todo.getDescription(),todo.getTargetDate(), false);
 		return "redirect:todo";
 	}
 	
@@ -72,9 +76,13 @@ public class TodoController {
 			return "addTodo";
 		}
 		
-		String username = (String)model.get("name");
+		String username = getLoggedInUsername(model);
 		todoService.updateTodo(todo);
 		return "redirect:todo";
 	}
 	
+	private String getLoggedInUsername(ModelMap model) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		return authentication.getName();
+	}
 }
