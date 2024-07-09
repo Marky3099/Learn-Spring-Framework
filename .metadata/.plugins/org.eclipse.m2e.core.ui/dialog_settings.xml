@@ -2,8 +2,10 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="C:\Users\MypC\Desktop\Eclipse\Learn-Spring-Framework\myfirstwebapp"/>
+			<item value="C:\Users\User\Desktop\eclipse\rest-web-services"/>
+			<item value="C:\Users\User\Desktop\eclipse\todo-spring"/>
 			<item value="C:\Users\User\Desktop\eclipse\myfirstwebapp"/>
+			<item value="C:\Users\MypC\Desktop\Eclipse\Learn-Spring-Framework\myfirstwebapp"/>
 			<item value="C:\Users\User\Desktop\eclipse\learn-jpa-and-hibernate"/>
 			<item value="C:\Users\User\Desktop\eclipse\practice-spring-boot"/>
 		</list>
