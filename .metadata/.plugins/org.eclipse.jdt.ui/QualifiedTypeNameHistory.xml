@@ -45,4 +45,6 @@
     <fullyQualifiedTypeName name="com.rest_webservices.rest_web_services.exception.ErrorDetails"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ControllerAdvice"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+    <fullyQualifiedTypeName name="com.rest_webservices.rest_web_services.user.UserNotFoundException"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
 </qualifiedTypeNameHistroy>
